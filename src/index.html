@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setoo HomeScreen</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="menu.js" defer></script>
+<style>
+    .background
+        {
+            background-color:#050505;
+        }
+        .bg-primary
+        {
+            background-color:#191919;
+        }
+        .text-gray
+        {
+            color:#999999;
+        }
+        .btn
+        {
+            background-color:#FD4539;
+        }
+        /* banner */
+       .color-star
+       {
+        color:#FD4539;
+       }
+       .btn2
+       {
+         border: 1px solid #282828;
+       }
+       /* section 1 */
+       .btn3
+        {
+            background-color:#282828;
+        }
+        /* section 3 */
+        .div-width
+        {
+            width:711px;
+        }
+        .dot-size
+        {
+            font-size: 5px;
+            margin-right:45px;
+        }
+        /* section 7 */
+        .num-color
+        {
+            color:#FC8663;
+        }
+        /* section 8 */
+        .div-color
+        {
+            background-color:#CBCBCB;
+        }
+        .container
+        {
+            margin-inline:auto;
+            max-width: 1640px;
+        } 
+        .hamburger
+        {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            transition: all 0.25s;
+            position: relative;
+        }
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom{
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            top: 0px;
+            left: 0px;
+            background-color: #fff;
+            transform: rotate (0);
+            transition: all 0.5s;
+        }
+        .hamburger-middle{
+            transform: translateY(7px);
+        }
+        .hamburger-bottom{
+            transform: translateY(14px);
+        }
+        .open{
+            transform: rotate(90deg);
+        }
+        .open .hamburger-top{
+            transform: rotate(45deg) translateY(6px) translateX(6px);
+        }
+        .open .hamburger-bottom{
+            transform: rotate(-45deg) translateY(6px) translateX(-6px);
+        }
+        .open .hamburger-middle{
+            display: none;
+        }
+</style>
+   
+
+</head>
+<body class="background">
+
+     <!-- Nav -->
+
+     <!-- <div class="2xl:bg-primary py-0.5 2xl:block sm:bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-green-900 2xl:bg-black">
+        <div class="container grid grid-cols-2 items-center py-6">
+            <div>
+                <img src="images/Setoo_logo.svg" class="w-36 h-11">
+            </div>
+            <div class="flex gap-24 justify-end">
+                <nav class="flex items-center gap-11 text-lg">
+                <a href="#" class="text-gray">Home</a>
+                <a href="#" class="text-gray">Service</a>
+                <a href="#" class="text-gray">Work</a>
+                <a href="#" class="text-gray">Process</a>
+                <a href="#" class="text-gray">About</a>
+                <a href="#" class="text-gray">Careers</a>
+                </nav>
+                <div class="justify-end">
+                    <button class="btn text-white rounded-md text-lg h-12 w-36 mr-6">Talk to us</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="bg-primary py-0.5">
+        <div class="container grid grid-cols-2 items-center py-6 sm:mx-auto">
+            <div>
+                <img src="images/Setoo_logo.svg" class="w-36 h-11">
+            </div>
+            <div class="flex md:gap-6 lg:gap-24 justify-end">
+                <nav class="hidden md:flex items-center md:gap-6 lg:gap-11 text-lg">
+                    <a href="#" class="text-gray">Home</a>
+                    <a href="#" class="text-gray">Service</a>
+                    <a href="#" class="text-gray">Work</a>
+                    <a href="#" class="text-gray">Process</a>
+                    <a href="#" class="text-gray">About</a>
+                    <a href="#" class="text-gray">Careers</a>
+                </nav>
+                <div class="justify-end flex">
+                    <button class="btn text-white rounded-md text-lg h-12 w-36 mr-6">Talk to us</button>
+                    <div class="md:hidden mt-auto mb-auto">
+                        <button id="menu-btn" type="button" class="z-40 block hamburger focus:outline-none">
+                            <span class="hamburger-top"></span>
+                            <span class="hamburger-middle"></span>
+                            <span class="hamburger-bottom"></span>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="menu" class="absolute top-0 -bottom-28 left-0 pt-10  flex-col self-end hidden w-full min-h-screen py-1pt-40 pl-12 space-y-3 text-lg uppercase bg-black">
+                <a href="#" class="text-gray">Home</a>
+                <a href="#" class="text-gray">Service</a>
+                <a href="#" class="text-gray">Work</a>
+                <a href="#" class="text-gray">Process</a>
+                <a href="#" class="text-gray">About</a>
+                <a href="#" class="text-gray">Careers</a>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Banner -->
+
+    <div class="grid 2xl:grid-cols-2 sm:grid-cols-1 gap-20 mt-24 container">
+        <div>
+            <h1 class="text-white text-6xl">Bridging the gap between ideas and products.</h1>
+            <p class="text-white text-2xl mt-14">Grow your business with Setoo's dynamic team of strategists, designers, developers, etc., who have a success rate of 98% for deploing your product on target.</p>
+            <div class="flex items-center gap-4 mt-56">
+                <div class="w-64 flex gap-1 items-center">
+                    <p class="text-white text-2xl">Rated</p>
+                    <i class="fa-regular fa-star color-star ml-2"></i>
+                    <i class="fa-regular fa-star color-star"></i>
+                    <i class="fa-regular fa-star color-star"></i>
+                    <i class="fa-regular fa-star color-star"></i>
+                    <i class="fa-regular fa-star color-star mr-16"></i>
+                </div>
+                <div class="w-64 flex items-center">
+                    <p class="text-white text-2xl">Trusted by <span class="color-star text-2xl ml-5">15+</span></p>
+                </div>
+                <div class="w-64 flex items-center">
+                    <p class="text-white text-2xl">Team of <span class="color-star text-2xl ml-5">50+</span></p>
+                </div>
+            </div>
+            <div class="flex items-center gap-20 mt-10">
+                <button class="px-14 h-16 text-gray bg-primary btn2 rounded-md text-lg transition duration-300 transform hover:scale-105 hover:bg-red-600 hover:text-white">Contact us</button>
+                <button class="px-12 h-16 text-gray bg-primary btn2 rounded-md text-lg transition duration-300 transform hover:scale-105 hover:bg-red-600 hover:text-white">View of Work</button>
+            </div>
+        </div>
+        
+        <div class="h-auto bg-primary flex flex-col items-center justify-center relative">
+            <p class="text-gray text-xl text-center">Motion Process <br>Infographic</p>
+            <div class="w-24 h-20">
+                <img src="images/Bot_icon2x.png" class="absolute w-24 h-20 -bottom-10 -right-2">
+            </div>
+        </div>
+    </div>
+
+    <!-- 2nd section -->
+
+    <div class="container mt-24">
+        <div class="bg-primary rounded-xl btn2">
+            <p class="text-center text-white text-3xl pt-10 pb-6 mb-6">Websites we Empowered through <span class="color-star">AI</span></p>
+            <div class="flex items-center gap-4 mb-7">
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-angular text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Angular</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-bootstrap text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Bootstrap</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-solid fa-code text-gray text-2xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Flutter</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-node-js text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">NestJS</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-css3-alt text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Tailwind CSS</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-vuejs text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Vue</a></span></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 3 -->
+
+    <div class="grid 2xl:grid-cols-12 sm:grid-cols-1 gap-20 mt-24 container">
+        <div class="h-auto bg-primary pt-10 pl-14 pr-11 pb-20 rounded-xl col-span-6">
+            <p class="text-white text-5xl mb-20">Ai Lab</p>
+
+            <div class="flex items-center space-x-7 bg-primary h-28 rounded-xl px-8 pt-8 pb-7 btn3">
+                <button class="btn text-white rounded-md text-lg px-20 py-4 transition duration-300 transform hover:scale-105">AML</button>
+                <!-- <i class="fa-solid fa-circle dot-size text-white"></i> -->
+                <button class="btn text-white rounded-md text-lg px-10 py-4 transition duration-300 transform hover:scale-105">Launch MVP</button>
+                <!-- <i class="fa-solid fa-circle dot-size text-white"></i> -->
+                <button class="btn text-white rounded-md text-lg px-5 py-4 transition duration-300 transform hover:scale-105">Remote Sourcing</button>
+            </div>
+
+            <p class="text-lg text-white mt-7">Grow your business with Setoo's dynamic team of strategists, designers, developers, etc., who have a success rate of 98% for deploing your product on target.</p>
+        </div>
+        <div class="col-span-1"></div>
+        <div class="col-span-5 h-auto pt-10">
+            <img src="images/AI_Image2x.png">
+        </div>
+     </div>
+
+     <!-- section 4 -->
+
+     <div class="container mt-24">
+        <div class="bg-primary rounded-xl btn2">
+            <p class="text-center text-white text-3xl pt-10 pb-6 mb-6">Websites we Empowered through <span class="color-star">AI</span></p>
+            <div class="flex items-center gap-4 mb-7">
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-angular text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Angular</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-bootstrap text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Bootstrap</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-solid fa-code text-gray text-2xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Flutter</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-node-js text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">NestJS</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-css3-alt text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Tailwind CSS</a></span></i>
+                </button>
+                <button class="btn3 w-72 h-20 rounded-md btn2 transition duration-300 transform hover:scale-105">
+                    <i class="fa-brands fa-vuejs text-gray text-4xl"><span class="text-gray"><a href="#" class="text-gray text-sm align-middle ml-2">Vue</a></span></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 5 -->
+     <div class="text-center text-white 2xl:mt-48 sm:mt-20">
+        <p class="mb-4 text-3xl">Labs</p>
+        <p class="text-lg">Transform your brand with our innovative digital solutions that captivate and engage your audience.</p>
+     </div>
+
+     <!-- section 6 -->
+     <div class="grid 2xl:grid-cols-4 2xl:gap-4 container 2xl:mt-48 sm:grid-cols-1 sm:gap-9">
+        <div class="relative">
+        <div class=" pt-12 px-9 pb-20 bg-primary rounded-xl text-center flex flex-col items-center">
+            <div class="w-24 h-24 btn3 rounded-md"></div>
+            <p class="text-white text-2xl mt-9">Project</p>
+            <p class="text-white text-2xl">Management</p>
+            <p class="text-white text-lg mt-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit modi incidunt dolorem aliquam aut esse assumenda inventore aspernatur, qui corrupti repellat libero labore quis fuga! Cum autem voluptatem iure tempore.</p>
+        </div>
+        <button class="text-lg px-11 2xl:h-14 btn rounded-md text-white font-medium 2xl:ml-28 align-top absolute 2xl:-bottom-6 transition duration-300 transform hover:scale-105 sm:h-11 sm:-bottom-4 sm:ml-60">Learn More</button>
+        </div>
+
+        <div class="relative">
+            <div class=" pt-12 px-9 pb-20 bg-primary rounded-xl text-center flex flex-col items-center">
+                <div class="w-24 h-24 btn3 rounded-md"></div>
+                <p class="text-white text-2xl mt-9">Project</p>
+                <p class="text-white text-2xl">Management</p>
+                <p class="text-white text-lg mt-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit modi incidunt dolorem aliquam aut esse assumenda inventore aspernatur, qui corrupti repellat libero labore quis fuga! Cum autem voluptatem iure tempore.</p>
+            </div>
+            <button class="text-lg px-11 2xl:h-14 btn rounded-md text-white font-medium 2xl:ml-28 align-top absolute 2xl:-bottom-6 transition duration-300 transform hover:scale-105 sm:h-11 sm:-bottom-4 sm:ml-60">Learn More</button>
+            </div>
+
+            <div class="relative">
+                <div class=" pt-12 px-9 pb-20 bg-primary rounded-xl text-center flex flex-col items-center">
+                    <div class="w-24 h-24 btn3 rounded-md"></div>
+                    <p class="text-white text-2xl mt-9">Project</p>
+                    <p class="text-white text-2xl">Management</p>
+                    <p class="text-white text-lg mt-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit modi incidunt dolorem aliquam aut esse assumenda inventore aspernatur, qui corrupti repellat libero labore quis fuga! Cum autem voluptatem iure tempore.</p>
+                </div>
+                <button class="text-lg px-11 2xl:h-14 btn rounded-md text-white font-medium 2xl:ml-28 align-top absolute 2xl:-bottom-6 transition duration-300 transform hover:scale-105 sm:h-11 sm:-bottom-4 sm:ml-60">Learn More</button>
+                </div>
+
+                <div class="relative">
+        <div class="pt-12 px-9 pb-20 bg-primary rounded-xl text-center flex flex-col items-center">
+            <div class="w-24 h-24 btn3 rounded-md"></div>
+            <p class="text-white text-2xl mt-9">Project</p>
+            <p class="text-white text-2xl">Management</p>
+            <p class="text-white text-lg mt-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit modi incidunt dolorem aliquam aut esse assumenda inventore aspernatur, qui corrupti repellat libero labore quis fuga! Cum autem voluptatem iure tempore.</p>
+        </div>
+        <button class="text-lg px-11 2xl:h-14 btn rounded-md text-white font-medium 2xl:ml-28 align-top absolute 2xl:-bottom-6 transition duration-300 transform hover:scale-105 sm:h-11 sm:-bottom-4 sm:ml-60">Learn More</button>
+        </div>
+     </div>
+
+
+     <!-- section 7 -->
+      <div class="container bg-primary py-40 pl-48 pr-36 mt-40 grid grid-cols-12 rounded-xl space-x-0">
+        <div class="flex flex-col justify-between col-span-4">
+            <div class="flex flex-col justify-center flex-grow">
+                <p class="text-white text-4xl">What our Clients</p>
+                <p class="text-white text-4xl">Says About Us</p>
+            </div>
+            <div class="flex items-center space-x-10 ml-2 text-2xl">
+                <i class="fa-solid fa-chevron-left text-white"></i>
+                <p class="num-color font-semibold">0</p>
+                <i class="fa-solid fa-chevron-right text-white"></i>
+            </div>
+        </div>
+
+        <div class="py-8 pl-8 pr-28 div-color rounded-md flex items-center gap-x-9 col-span-8">
+            <div class="w-60 h-80 btn3 rounded-md">
+
+            </div>
+            <div>
+                <i class="fa-solid fa-quote-left text-4xl mb-6"></i>
+                <p class="text-xl w-96 h-44">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum laboriosam doloribus porro. Reiciendis quasi eos mollitia, repellendus doloribus impedit. Consequatur, vitae odit nam dolor.</p>
+                <p class="font-semibold text-lg mt-9">James Adam</p>
+            </div>
+        </div>
+      </div>
+
+
+     <!-- section 8 -->
+      <div class="container bg-primary rounded-xl btn2 text-center text-white py-8 mt-32">
+        <p class="text-5xl">Frequently Asked Questions</p>
+        <p class="text-lg mt-3">Still you have any questions?Contact our team via hello@setoo.co</p>
+      </div>
+ 
+      <div class="container mt-16 grid 2xl:grid-cols-12 2xl:grid-rows-1 2xl:items-center sm:grid-cols-1">
+        <div class="flex items-center gap-11 justify-normal 2xl:col-span-6">
+            <div class="w-28 h-24 div-color rounded-xl"></div>
+            <div class="w-5/6">
+                <p class="font-bold text-white text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p class=" text-white text-base mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error voluptate eaque sapiente officiis. Eius, nobis neque ut facere, excepturi officiis perferendis doloremque doloribus, quibusdam eos totam quasi. Dignissimos, ab quis?</p>
+            </div>
+        </div>
+        <div class="2xl:col-span-1 text-center"><i class="fa-solid fa-plus text-white text-xl mb-16"></i></div>
+        <div class="flex items-center gap-11 2xl:col-span-5">
+            <div class="w-28 h-24 div-color rounded-xl"></div>
+            <div>
+                <p class="font-bold text-white text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="container 2xl:mt-20 grid 2xl:grid-cols-12 2xl:grid-rows-1 sm:grid-cols-1 sm:space-y-5 sm:mt-12">
+        <div class="flex items-center gap-11 justify-normal 2xl:col-span-6">
+            <div class="w-28 h-24 div-color rounded-xl"></div>
+            <div>
+                <p class="font-bold text-white text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+        <div class="2xl:col-span-1"></div>
+        <div class="flex items-center gap-11 2xl:col-span-5">
+            <div class="w-28 h-24 div-color rounded-xl"></div>
+            <div>
+                <p class="font-bold text-white text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        </div>
+      </div>
+
+
+</body>
+</html>
